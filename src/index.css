@@ -1,13 +1,159 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --header-bg: #000;
+  --primary-accent: #ffe066;  
+  --hero-left-bg: white;
+  --hero-right-bg: #ffe066;
+  --button-bg: #000;
+  --button-text: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-bg: #333;
+  --primary-accent: #f1c40f;
+  --hero-left-bg: #333;
+  --hero-right-bg: #555;
+  --button-bg: #f1c40f;
+  --button-text: #000;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 500px;
+  padding: 60px 20px;
+  background: linear-gradient(to right, var(--hero-left-bg) 50%, var(--hero-right-bg) 50%);
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-section span {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+.hero-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.hero-section p {
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+.hero-section button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Product Card */
+.product-card {
+  background: var(--bg-color);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.product-card button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 400px;
+    padding: 40px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 300px;
+    padding: 30px 5px;
+    font-size: 0.9rem;
+  }
+}
+
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
