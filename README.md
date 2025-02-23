@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# Harmoni E-Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Harmoni E-Store is a modern, responsive React-based e-commerce front end. It demonstrates key skills in React and Redux by fetching products from the FakeStore API, displaying them in a dynamic grid, showing detailed product modals with quantity selection, and providing a seamless user experience with features like category search (via text and dropdown), toast notifications, and a dark mode toggle.
 
-## Available Scripts
+---
+## Table of Contents
+- [Installation](#installation)
+- [Running the Project](#running-the-project)
+- [Features](#features)
+  - [Header & Navigation](#header--navigation)
+  - [Hero Section](#hero-section)
+  - [Product Display](#product-display)
+  - [Product Modal](#product-modal)
+  - [Services & Footer](#services--footer)
+  - [Dark Mode Toggle](#dark-mode-toggle)
+- [Project Structure](#project-structure)
+- [Challenges & Future Improvements](#challenges--future-improvements)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. **Clone the repository:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/yourusername/harmoni-e-store.git
+   cd harmoni-e-store
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Running the Project
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Start the development server:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  ```bash
+  npm start
+  ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  The application will open in your browser at [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+- **Build for production (optional):**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```bash
+  npm run build
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Responsive Layout:**  
+  Uses CSS Grid, Flexbox, and media queries to adapt seamlessly across devices.
 
-### Analyzing the Bundle Size
+- **Header & Navigation:**  
+  Features a yellow header with the brand "Harmoni," navigation links, and a combined category search that supports both a text-based input and a dropdown. A cart icon shows the current item count, and a dark mode toggle (with sun/moon icons) lets users switch themes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Hero Section:**  
+  Displays a split background (white and light yellow), large bold typography, and a "Shop Now" button with fade-in animation.
 
-### Making a Progressive Web App
+- **Product Display:**  
+  Products load in a responsive grid. Each product card shows an image, truncated title, star rating (with a yellow star), price, and an "Add to Cart" button with smooth hover transitions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Product Modal:**  
+  Clicking a product opens a modal with detailed product information, a quantity selector, and a "Buy Now" button. A toast notification informs users when a product is added to the cart.
 
-### Advanced Configuration
+- **Services Section & Footer:**  
+  A services section highlights key benefits (e.g., Free Delivery, 24/7 Support, Money Back Guarantee), and a centered footer provides subscription options, support contact, account links, and quick links.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+harmoni-e-store
+├── public
+│   └── index.html
+├── src
+│   ├── components
+│   │   ├── Header.js
+│   │   ├── HeroSection.js
+│   │   ├── ServicesSection.js
+│   │   ├── ProductCard.js
+│   │   ├── ProductGrid.js
+│   │   ├── ProductModal.js
+│   │   └── Footer.js
+│   ├── pages
+│   │   └── HomePage.js
+│   ├── store
+│   │   └── slices
+│   │       ├── productSlice.js
+│   │       └── cartSlice.js
+│   ├── styles
+│   │   ├── App.css
+│   │   └── index.css
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── README.md
+```
 
-### `npm run build` fails to minify
+- **components/**: Reusable UI components (header, hero, modal, etc.)  
+- **pages/**: Page-level components, e.g., HomePage.  
+- **store/**: Redux slices for managing product and cart state.  
+- **styles/**: Global CSS files.  
+- **App.js & index.js:** Main application components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## Challenges & Future Improvements
+
+- **Enhanced Cart Functionality:**  
+  Expand the current cart count to include a full cart page with detailed item management.
+
+- **Robust Error Handling:**  
+  Improve error feedback for API failures and invalid category searches by replacing alerts with in-UI notifications.
+
+- **Advanced Search:**  
+  Incorporate a full-text search for product names or descriptions in addition to the category filter.
+
+- **User Authentication:**  
+  Add user login/signup functionality for a personalized experience.
+
+- **Performance Optimizations:**  
+  Utilize code splitting, lazy loading, and memoization for smoother performance.
+
