@@ -1,7 +1,3 @@
-Below is a final, polished README.md that meets your project requirements without overemphasizing the evaluation criteria. You can customize any sections further as needed.
-
----
-
 # Harmoni E-Store
 
 Harmoni E-Store is a modern, responsive React-based e-commerce front end. It demonstrates key skills in React and Redux by fetching products from the FakeStore API, displaying them in a dynamic grid, showing detailed product modals with quantity selection, and providing a seamless user experience with features like category search (via text and dropdown), toast notifications, and a dark mode toggle.
